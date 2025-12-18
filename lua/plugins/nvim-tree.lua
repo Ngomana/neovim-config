@@ -7,10 +7,32 @@ return {
     },
     config = function()
       local nvim_tree = require("nvim-tree")
+      local api = require("nvim-tree.api")
 
       -- Disable netrw (the built-in file browser)
       vim.g.loaded_netrw = 1
       vim.g.loaded_netrwPlugin = 1
+
+      -- Custom on_attach function for keybindings
+      local function on_attach(bufnr)
+        local function opts(desc)
+          return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
+        end
+
+        -- Default mappings
+        api.config.mappings.default_on_attach(bufnr)
+
+        -- Custom function to open file in vertical split
+        local function vsplit_open()
+          local node = api.tree.get_node_under_cursor()
+          if node and node.type == "file" then
+            vim.cmd("vsplit " .. node.absolute_path)
+          end
+        end
+
+        -- Custom mapping for vertical split
+        vim.keymap.set("n", "<leader>|", vsplit_open, opts("Open: Vertical Split"))
+      end
 
       nvim_tree.setup({
         sort_by = "case_sensitive",
@@ -48,6 +70,8 @@ return {
           relativenumber = false,
           signcolumn = "yes",
         },
+
+        on_attach = on_attach,
 
         renderer = {
           root_folder_label = false,
