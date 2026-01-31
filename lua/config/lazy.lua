@@ -17,10 +17,11 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
   spec = {
     { "LazyVim/LazyVim", import = "lazyvim.plugins" },
+    { import = "lazyvim.plugins.extras.linting.eslint" },
     { import = "plugins" },
   },
   defaults = {
-    lazy = false,
+    lazy = true, -- Enable lazy loading for better startup
     version = false, -- always use the latest git commit
   },
   install = { colorscheme = { "tokyonight", "habamax" } },

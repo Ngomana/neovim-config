@@ -37,8 +37,8 @@ return {
       nvim_tree.setup({
         sort_by = "case_sensitive",
         hijack_cursor = true,
-        sync_root_with_cwd = true,
-        respect_buf_cwd = true,
+        sync_root_with_cwd = false,
+        respect_buf_cwd = false,
 
         -- Show diagnostics like Neo-tree
         diagnostics = {
@@ -108,7 +108,7 @@ return {
         -- Auto follow current file (like Neo-tree)
         update_focused_file = {
           enable = true,
-          update_root = true,
+          update_root = false,
           ignore_list = {},
         },
 

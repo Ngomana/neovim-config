@@ -25,3 +25,8 @@ vim.keymap.set("n", "<leader>uh", function()
   vim.lsp.inlay_hint.enable(not enabled)
   vim.notify("Inlay hints " .. (enabled and "off" or "on"))
 end, { desc = "Toggle Inlay Hints" })
+
+-- Format buffer manually with <leader>fm
+vim.keymap.set({ "n", "v" }, "<leader>fm", function()
+  require("conform").format({ lsp_fallback = true })
+end, { desc = "Format buffer" })
