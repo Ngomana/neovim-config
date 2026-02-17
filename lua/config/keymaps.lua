@@ -17,8 +17,8 @@ keymap.set("n", "tn", "tabnext<RETURN>", opts)
 keymap.set("n", "tp", "tabprev<RETURN>", opts)
 
 -- Split window
-keymap.set("n", "ss", ":split<RETURN>", opts)
-keymap.set("n", "sv", ":vsplit<RETURN>", opts)
+keymap.set("n", "ss", "<cmd>split<CR>", opts)
+keymap.set("n", "sv", "<cmd>vsplit<CR>", opts)
 
 vim.keymap.set("n", "<leader>uh", function()
   local enabled = vim.lsp.inlay_hint.is_enabled()

@@ -15,11 +15,6 @@ return {
         markdown = { "prettier" },
         yaml = { "prettier" },
       },
-      format_on_save = {
-        -- These options will be passed to conform.format()
-        timeout_ms = 500,
-        lsp_fallback = true,
-      },
       formatters = {
         prettier = {
           -- Use pnpm exec to run prettier (works with monorepos on Windows)
