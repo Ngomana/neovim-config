@@ -3,6 +3,7 @@ return {
     "stevearc/conform.nvim",
     opts = {
       formatters_by_ft = {
+        fish = {}, -- Disable fish formatter (not using fish shell)
         javascript = { "prettier" },
         typescript = { "prettier" },
         javascriptreact = { "prettier" },

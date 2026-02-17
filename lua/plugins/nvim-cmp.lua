@@ -1,7 +1,7 @@
 return {
   {
     "hrsh7th/nvim-cmp",
-    enabled = true, -- ensure Lazy loads it
+    enabled = false, -- disabled in favor of blink.cmp
     event = "InsertEnter",
     dependencies = {
       "hrsh7th/cmp-nvim-lsp",

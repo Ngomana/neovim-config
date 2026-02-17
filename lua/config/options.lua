@@ -22,3 +22,17 @@ vim.opt.pumheight = 10 -- Limit popup menu height for better performance
 -- Reduce redraw frequency
 vim.opt.lazyredraw = false -- Keep disabled in Neovim 0.9+
 vim.opt.ttyfast = true -- Faster terminal connection
+
+-- Clipboard (using OSC 52 - no external tools needed)
+vim.opt.clipboard = "unnamedplus"
+vim.g.clipboard = {
+  name = "OSC 52",
+  copy = {
+    ["+"] = require("vim.ui.clipboard.osc52").copy("+"),
+    ["*"] = require("vim.ui.clipboard.osc52").copy("*"),
+  },
+  paste = {
+    ["+"] = require("vim.ui.clipboard.osc52").paste("+"),
+    ["*"] = require("vim.ui.clipboard.osc52").paste("*"),
+  },
+}

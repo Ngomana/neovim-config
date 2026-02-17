@@ -1,15 +1,6 @@
 -- Performance optimizations for various plugins
 return {
-  -- Optimize nvim-tree lazy loading
-  {
-    "nvim-tree/nvim-tree.lua",
-    cmd = { "NvimTreeToggle", "NvimTreeFocus", "NvimTreeFindFile" },
-    keys = {
-      { "<leader>e", "<cmd>NvimTreeToggle<cr>", desc = "Toggle File Explorer" },
-    },
-  },
-
-  -- Optimize telescope lazy loading  
+  -- Optimize telescope lazy loading
   {
     "nvim-telescope/telescope.nvim",
     cmd = "Telescope",
