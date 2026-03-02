@@ -3,6 +3,9 @@
 -- Add any additional options here
 -- ~/.config/nvim/lua/config/options.lua
 
+-- Use neo-tree as file explorer (disables Snacks Explorer)
+vim.g.lazyvim_explorer = "neo-tree"
+
 -- Line wrapping
 vim.opt.wrap = true -- Enable line wrapping
 vim.opt.linebreak = true -- Wrap at word boundaries (not in middle of words)
