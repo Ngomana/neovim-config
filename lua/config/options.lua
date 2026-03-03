@@ -22,6 +22,10 @@ vim.opt.writebackup = false -- Disable backup before writing
 vim.opt.signcolumn = "yes" -- Always show sign column to prevent layout shift
 vim.opt.pumheight = 10 -- Limit popup menu height for better performance
 
+-- Disable LSP inlay hints
+vim.g.lazyvim_inlay_hints = false
+
+
 -- Reduce redraw frequency
 vim.opt.lazyredraw = false -- Keep disabled in Neovim 0.9+
 vim.opt.ttyfast = true -- Faster terminal connection
